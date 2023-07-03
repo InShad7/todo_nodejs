@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       home: (JwtDecoder.isExpired(token) == false)
           ? DashboardScreen(token: token)
-          : LoginScreen(),
+          : const LoginScreen(),
     );
   }
 }

@@ -4,7 +4,8 @@ import 'package:todo_nodejs/view/dashboard_screen/widget/todo_texf_field.dart';
 import 'package:todo_nodejs/view/utils/utils.dart';
 
 class AddTodo extends StatelessWidget {
-  const AddTodo({super.key});
+  const AddTodo({super.key, this.addTodo});
+  final addTodo;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class AddTodo extends StatelessWidget {
                         onPressed: () {
                           Navigator.pop(context);
                           titleController.clear();
+                          contentController.clear();
                         },
                         icon: const Icon(Icons.close),
                       ),
@@ -39,6 +41,8 @@ class AddTodo extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
+                          addTodo();
+
                           // add
                           //     ? tweetModel.addTweet(context)
                           //     : tweetModel.editTweet(context, data);
